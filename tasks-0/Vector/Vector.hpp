@@ -346,11 +346,11 @@ typename Vector<T>::Iterator& Vector<T>::Iterator::operator=(const Iterator& cop
 
 template <class T>
 Vector<T>::Iterator::Iterator(Iterator&& move_iter) :
-    ptr(std::move(copy_iter.ptr)) {}
+    ptr(std::move(move_iter.ptr)) {}
 
 template <class T>
 typename Vector<T>::Iterator& Vector<T>::Iterator::operator=(Iterator&& move_iter) {
-    ptr = std::move(copy_iter.ptr);
+    ptr = std::move(move_iter.ptr);
     return *this;
 }
 
@@ -492,7 +492,7 @@ void Vector<T>::change_buff_volume(size_t next_capacity) {
     
     size_t next_size = std::min(next_capacity, size_);
     for (size_t elem_index = 0; elem_index < next_size; ++elem_index) {
-        next_buff[elem_index] = buff_[elem_index];
+        next_buff[elem_index] = std::move(buff_[elem_index]);
     }
 
     destroy_constructed();
