@@ -8,11 +8,13 @@ Implement class that acts like usual int but also compute usage statistics
 + Global statistics
 
 Statistics kinds:
-+ Common operations count
-+ Assignments count
-+ Arithmetical operations count
-+ Comparisons count
-+ Bit operations count
+|Count|Method for object|Global method|
+|---|---|---|
+|Common operations|`GetOperationsCount()`|`GetGlobalOpsCount()`|
+|Assignments|`GetAssigningsCount()`|`GetGlobalAssignCount()`|
+|Arithmetical operations|`GetArithmeticsCount()`|`GetGlobalArithmCount)()`|
+|Comparisons|`GetComparisonsCount()`|`GetGlobalCompCount()`|
+|Bit operations|`GetBinsCount()`|`GetGlobalBinCount()`|
 
 
 #### Vector
